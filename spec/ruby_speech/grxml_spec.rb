@@ -123,7 +123,7 @@ module RubySpeech
       # TODO: maybe turn a rule embedded in anthoer rule into a ruleref??
       describe "embedding" do
         context "GRXML documents" do
-          let :doc1 do
+          let :original_doc do
             RubySpeech::GRXML.draw :mode => :dtmf, :root => 'digits' do
               rule :id => :digits do
                 one_of do
@@ -133,6 +133,8 @@ module RubySpeech
               end
             end
           end
+
+          let(:doc1) { original_doc.clone }
 
           let :doc2 do
             doc = doc1
@@ -158,6 +160,11 @@ module RubySpeech
 
           it "should embed the document" do
             doc2.should == expected_doc
+          end
+
+          it 'Leave the original document alone' do
+            doc2.should == expected_doc
+            doc1.should == original_doc
           end
 
           context "of different modes (dtmf in voice or vice-versa)" do

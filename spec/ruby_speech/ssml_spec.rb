@@ -83,12 +83,14 @@ module RubySpeech
 
       describe "embedding" do
         it "SSML documents" do
-          doc1 = RubySpeech::SSML.draw do
+          original_doc = RubySpeech::SSML.draw do
             string "Hi, I'm Fred. The time is currently "
             say_as :interpret_as => 'date', :format => 'dmy' do
               "01/02/1960"
             end
           end
+
+          doc1 = original_doc.clone
 
           doc2 = RubySpeech::SSML.draw do
             voice :gender => :male, :name => 'fred' do
@@ -106,6 +108,7 @@ module RubySpeech
           end
 
           doc2.should == expected_doc
+          doc1.should == original_doc
         end
 
         it "SSML elements" do
