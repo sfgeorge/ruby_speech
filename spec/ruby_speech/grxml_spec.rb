@@ -162,7 +162,7 @@ module RubySpeech
             doc2.should == expected_doc
           end
 
-          it 'Leave the original document alone' do
+          it 'should leave the original document alone' do
             doc2 # Force doc2 to be constructed
             doc1.should == original_doc
           end
