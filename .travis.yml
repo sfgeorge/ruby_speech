@@ -15,3 +15,7 @@ before_install:
 
 notifications:
   irc: "irc.freenode.org#adhearsion"
+
+  email:
+    recipients:
+      secure: Vkz6LJ7uvz4h4yOUBGzGBw759XfI7hlnZAl8tdXtklcT11+A38F0RaDmIKjcs8/msBUcvDvuVQdjobLxovTRmjetRIrys1IUXsXJWd//5ogmYIhOgIn5esYKXxLYAZS/m6PP8ekMZJeW/P3OCWBOTO8tjeUrYN9bAda8/KKzoKU=
