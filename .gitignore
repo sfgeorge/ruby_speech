@@ -2,7 +2,6 @@
 *.gem
 *.bundle
 *.jar
-Gemfile.lock
 pkg/*
 spec/reports
 .yardoc
