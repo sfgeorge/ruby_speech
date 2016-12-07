@@ -13,5 +13,5 @@ matrix:
 before_install:
   - sudo apt-get install libpcre3 libpcre3-dev
 
-notifications:
-  irc: "irc.freenode.org#adhearsion"
+#notifications:
+#  irc: "irc.freenode.org#adhearsion"
