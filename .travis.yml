@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 dist: trusty
 language: ruby
 
@@ -18,6 +18,11 @@ rvm:
   - rbx-2
   - rbx-3
 
+before_install:
+  - sudo apt-get install libpcre3 libpcre3-dev
+  - yes | gem uninstall --all --executables bundler
+  - gem install bundler
+before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
 
 notifications:
 #  irc: "irc.freenode.org#adhearsion"
