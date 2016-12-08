@@ -1,4 +1,9 @@
 sudo: false
+addons:
+  apt:
+    packages:
+    - libpcre3
+    - libpcre3-dev
 language: ruby
 
 matrix:
@@ -24,7 +29,6 @@ matrix:
     - rvm: jruby-9.0.4.0
       jdk: openjdk8
 before_install:
-  - sudo apt-get install libpcre3 libpcre3-dev
   - yes | gem uninstall --all --executables bundler
   - gem install bundler
 before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
