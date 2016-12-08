@@ -12,7 +12,6 @@ addons:
     - libpcre3-dev
     - openssl
 before_install:
-  - yes | gem uninstall --all --executables bundler
   - gem install bundler
 before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
 
