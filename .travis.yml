@@ -7,7 +7,7 @@ rvm:
   - rbx-3
 
 before_install:
-  - sudo apt-get install libpcre3 libpcre3-dev openssl
+  - sudo apt-get install libpcre3 libpcre3-dev openssl libssl-dev
   - rvm gemset delete --force global
   - yes | gem uninstall --all --executables bundler
   - gem install bundler
