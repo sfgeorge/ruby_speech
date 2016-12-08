@@ -1,5 +1,4 @@
 sudo: false
-dist: trusty
 language: ruby
 rvm:
   - rbx-2
@@ -13,7 +12,7 @@ addons:
     - openssl
     - libssl-dev
 before_install:
-  - printenv
+  - printenv | sort
 before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
 
 notifications:
@@ -22,3 +21,4 @@ notifications:
   email:
     recipients:
       secure: Vkz6LJ7uvz4h4yOUBGzGBw759XfI7hlnZAl8tdXtklcT11+A38F0RaDmIKjcs8/msBUcvDvuVQdjobLxovTRmjetRIrys1IUXsXJWd//5ogmYIhOgIn5esYKXxLYAZS/m6PP8ekMZJeW/P3OCWBOTO8tjeUrYN9bAda8/KKzoKU=
+#[ "${foo:0:4}" == 1.9. ]
