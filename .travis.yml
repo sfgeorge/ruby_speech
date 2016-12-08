@@ -1,23 +1,19 @@
 language: ruby
 
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
-  - 2.2.0
-  - 2.3.0
-  - jruby-1.7
-  - jruby-9.0.4.0
   - rubinius-2
+  - rubinius-2.11
   - rubinius-3
-  - jruby-head
   - rubinius-head
-  - ruby-head
-matrix:
-  allow_failures:
-    - rvm: jruby-head
-    - rvm: rubinius-head
-    - rvm: ruby-head
+  - rubinius-3.9
+  - rubinius-3.0
+  - rubinius
+  - rbx-head
+  - rbx-2.5.2
+  - rbx-2.4.1
+  - rbx-1.4.2
+  - rbx
+  - rbx-2
 before_install:
   - sudo apt-get install libpcre3 libpcre3-dev
   - yes | gem uninstall --all --executables bundler
