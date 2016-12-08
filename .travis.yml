@@ -1,9 +1,4 @@
 sudo: false
-addons:
-  apt:
-    packages:
-    - libpcre3
-    - libpcre3-dev
 language: ruby
 
 matrix:
@@ -11,23 +6,28 @@ matrix:
     - rvm: ruby-1.9.3
     - rvm: ruby-2.3.1
     - rvm: jruby-1.7
-      jdk: oraclejdk7
-    - rvm: jruby-1.7
       jdk: openjdk7
     - rvm: jruby-1.7
-      jdk: openjdk8
-    - rvm: jruby-head
       jdk: oraclejdk7
+    - rvm: jruby-1.7
+      jdk: oraclejdk8
     - rvm: jruby-head
       jdk: openjdk7
     - rvm: jruby-head
-      jdk: openjdk8
-    - rvm: jruby-9.0.4.0
       jdk: oraclejdk7
+    - rvm: jruby-head
+      jdk: oraclejdk8
     - rvm: jruby-9.0.4.0
       jdk: openjdk7
     - rvm: jruby-9.0.4.0
-      jdk: openjdk8
+      jdk: oraclejdk7
+    - rvm: jruby-9.0.4.0
+      jdk: oraclejdk8
+addons:
+  apt:
+    packages:
+    - libpcre3
+    - libpcre3-dev
 before_install:
   - yes | gem uninstall --all --executables bundler
   - gem install bundler
