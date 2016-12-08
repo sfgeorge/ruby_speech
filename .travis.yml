@@ -13,6 +13,9 @@ addons:
     - libssl-dev
 before_install:
   - printenv | sort
+  - rvm get stable
+  - rvm install $RUBY_VERSION
+  - rvm use $RUBY_VERSION
 before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
 
 notifications:
