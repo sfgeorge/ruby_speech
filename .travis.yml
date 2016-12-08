@@ -13,9 +13,7 @@ addons:
     - openssl
     - libssl-dev
 before_install:
-  - rvm gemset delete --force global
-  - yes | gem uninstall --all --executables bundler
-  - gem install bundler
+  - printenv
 before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
 
 notifications:
