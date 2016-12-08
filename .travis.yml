@@ -1,37 +1,22 @@
 sudo: false
 language: ruby
 
-matrix:
-  include:
-    - rvm: ruby-1.9.3
-    - rvm: ruby-2.3.1
-    - rvm: jruby-1.7
-      jdk: openjdk7
-    - rvm: jruby-1.7
-      jdk: oraclejdk7
-    - rvm: jruby-1.7
-      jdk: oraclejdk8
-    - rvm: jruby-head
-      jdk: openjdk7
-    - rvm: jruby-head
-      jdk: oraclejdk7
-    - rvm: jruby-head
-      jdk: oraclejdk8
-    - rvm: jruby-9.0.4.0
-      jdk: openjdk7
-    - rvm: jruby-9.0.4.0
-      jdk: oraclejdk7
-    - rvm: jruby-9.0.4.0
-      jdk: oraclejdk8
-addons:
-  apt:
-    packages:
-    - libpcre3
-    - libpcre3-dev
-before_install:
-  - yes | gem uninstall --all --executables bundler
-  - gem install bundler
-before_script: export JRUBY_OPTS="--server -J-Xss1024k -J-Xmx652m -J-XX:+UseConcMarkSweepGC"
+rvm:
+  - rubinius-2
+  - rubinius-2.11
+  - rubinius-3
+  - rubinius-head
+  - rubinius-3.9
+  - rubinius-3.0
+  - rubinius
+  - rbx-head
+  - rbx-2.5.2
+  - rbx-2.4.1
+  - rbx-1.4.2
+  - rbx
+  - rbx-2
+  - rbx-3
+
 
 notifications:
 #  irc: "irc.freenode.org#adhearsion"
