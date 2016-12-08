@@ -8,14 +8,15 @@ rvm:
   - 2.3.0
   - jruby-1.7
   - jruby-9.0.4.0
-  - rbx-2.4
+  - rubinius-2
+  - rubinius-3
   - jruby-head
-  - rbx-head
+  - rubinius-head
   - ruby-head
 matrix:
   allow_failures:
     - rvm: jruby-head
-    - rvm: rbx-head
+    - rvm: rubinius-head
     - rvm: ruby-head
 before_install:
   - sudo apt-get install libpcre3 libpcre3-dev
