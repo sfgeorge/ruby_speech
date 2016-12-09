@@ -7,10 +7,9 @@ matrix:
     - rvm: 2.1.0
     - rvm: 2.2.0
     - rvm: 2.3.0
-    - rvm: ruby-head
-    - rvm: rbx-2.2.1
     - rvm: rbx-2
     - rvm: rbx-3
+    - rvm: ruby-head
     - rvm: jruby-1.7
       jdk: openjdk7
     - rvm: jruby-1.7
@@ -30,8 +29,7 @@ matrix:
     - rvm: jruby-9.0.4.0
       jdk: oraclejdk8
   allow_failures:
-    - rbx-2
-    - rbx-3
+    - rvm: ruby-head
 sudo: false
 addons:
   apt:
