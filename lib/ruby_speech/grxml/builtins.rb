@@ -91,9 +91,24 @@ module RubySpeech::GRXML::Builtins
   def self.currency(options = nil)
     RubySpeech::GRXML.draw mode: :dtmf, root: 'currency' do
       rule id: 'currency', scope: 'public' do
-        item repeat: '0-' do
+        one_of do
+          item { ruleref uri: '#less_than_one' }
+          item { ruleref uri: '#one_or_more' }
+        end
+      end
+
+      rule id: 'less_than_one' do
+        item { '*' }
+        item repeat: '1-2' do
           ruleref uri: '#digit'
         end
+      end
+
+      rule id: 'one_or_more' do
+        item repeat: '1-' do
+          ruleref uri: '#digit'
+        end
+
         item repeat: '0-1' do
           item { '*' }
           item repeat: '0-2' do
