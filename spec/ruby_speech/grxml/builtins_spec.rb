@@ -116,6 +116,8 @@ describe RubySpeech::GRXML::Builtins do
     it { is_expected.to match('123').and_interpret_as('dtmf-1 dtmf-2 dtmf-3') }
     it { is_expected.to match('123*').and_interpret_as('dtmf-1 dtmf-2 dtmf-3 dtmf-star') }
 
+    it { is_expected.to potentially_match('') }
+
     it { is_expected.to not_match('#') }
   end
 
