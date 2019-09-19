@@ -10,7 +10,7 @@ import org.jruby.runtime.ObjectAllocator;
 import org.jruby.runtime.ThreadContext;
 import org.jruby.runtime.Visibility;
 import org.jruby.runtime.builtin.IRubyObject;
-import org.jruby.javasupport.util.RuntimeHelpers;
+import org.jruby.runtime.Helpers;
 
 import java.util.regex.*;
 
@@ -39,7 +39,7 @@ public class RubySpeechGRXMLMatcher extends RubyObject {
 
     if (m.matches()) {
       if (is_max_match(string_buffer)) {
-        return RuntimeHelpers.invoke(context, this, "match_for_buffer", buffer, runtime.getTrue());
+        return Helpers.invoke(context, this, "match_for_buffer", buffer, runtime.getTrue());
       }
       return callMethod(context, "match_for_buffer", buffer);
     } else if (m.hitEnd()) {
